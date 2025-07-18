@@ -1,11 +1,11 @@
 # Entities and components
 
 Entities are unique identifiers that act as containers for components, defining their data and state.
-Entities do not store logic or behavior directly; instead, [Traits](Traits.md) (systems) operate on entities based on their assigned components.
+Entities do not store logic or behavior directly; instead, [traits](Traits.md) (systems) operate on entities based on their assigned components.
 
 ### 
 
-```lua
+```luau
 local entity = world:spawn()
 ```
 
@@ -28,7 +28,7 @@ world:assign(player, health, 100) -- Here, 'health' acts as a component
 ```
 
 Because components are just identifiers, **you could technically assign any entity to another — even the same one:**
-```lua
+```lua linenums="4"
 world:assign(player, player, player)
 ```
 
@@ -52,3 +52,6 @@ local health = world:spawn()
 local data = { max = 100, current = 100 }
 world:assign(entity, health, data)
 ```
+
+!!! tip Recommendation
+    We recommend you [to check this page](../Guides/Strict-typing.md) on typing your components data.
